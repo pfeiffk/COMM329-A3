@@ -1,0 +1,79 @@
+  nav {
+  display: flex;
+  padding: 1em;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: black;
+  font-size: 14pt;
+  color: white;
+  } .primary {
+  flex-grow: .3;
+  font-size: 18pt;
+  }
+
+  nav a:link, nav a:visited {
+  color: lightpink;
+  text-decoration: none;
+  } nav a:hover, nav a:active {
+  color: #F0F0F0;
+  text-decoration: underline;
+  } nav a.active {
+  color: #F0F0F0;
+  }
+
+body {
+
+}
+
+  button {
+  border: none;
+  background-color: lightyellow;
+  } .dropdownButton {
+  color: white;
+  background-color: black;
+  }
+
+.grid {
+  margin: 1em;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr;
+} .grid-item {
+  border-radius: 4px;
+  padding-bottom: .5em;
+  background-color: beige;
+}
+
+.thumbnail {
+  border-radius: 4px 4px 0 0;
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.one .thumbnail { background-image: url(https://picsum.photos/600/400?image=1084);}
+.two .thumbnail { background-image: url(https://picsum.photos/600/400?image=1074);}
+.three .thumbnail { background-image: url(https://picsum.photos/600/400?image=937);}
+.four .thumbnail { background-image: url(https://picsum.photos/600/400?image=1024);}
+.five .thumbnail { background-image: url(https://picsum.photos/600/400?image=1020);}
+.six .thumbnail { background-image: url(https://picsum.photos/600/400?image=837);}
+.seven .thumbnail { background-image: url(https://picsum.photos/600/400?image=11);}
+.eight .thumbnail { background-image: url(https://picsum.photos/600/400?image=433);}
+.nine .thumbnail { background-image: url(https://picsum.photos/600/400?image=560);}
+.ten .thumbnail { background-image: url(https://picsum.photos/600/400?image=783);}
+.eleven .thumbnail { background-image: url(https://picsum.photos/600/400?image=718);}
+.twelve .thumbnail { background-image: url(https://picsum.photos/600/400?image=577);}
+
+@media screen and (min-width: 550px) {
+  .grid {grid-template-columns: repeat(2, 1fr);}
+}
+@media screen and (min-width: 768px) {
+  .grid {grid-template-columns: repeat(3, 1fr);}
+}
+@media screen and (min-width: 990px) {
+  .grid {grid-template-columns: repeat(4, 1fr);}
+}
+@media screen and (min-width: 1280px) {
+  .grid {grid-template-columns: repeat(4, 1fr);}
+}

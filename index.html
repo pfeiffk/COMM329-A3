@@ -6,22 +6,22 @@
     <meta https-http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, intial-scale=1">
     <title>Image Gallery</title>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/mini_reset.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/mini_reset.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <script type="text/javascript" src="A3.js"></script>
-    <nav>
-      <a id="nav primary">Image Gallery</a>
-      <a id="nav secondary">Home</a>
-      <a id="nav secondary">Upload</a>
-      <a id="nav secondary">Info</a>
+    <nav id="main-nav" class="top">
+      <a href="#menu" class="nav-item secondary"><span class="label">Home</span></a>
+      <a href="#menu" class="nav-item secondary"><span class="label">Upload</span></a>
+      <a href="#menu" class="nav-item primary"><span class="label">Image Gallery</span></a>
+      <a href="#menu" class="nav-item secondary"><span class="label">Info</span></a>
       <div class="dropdown">
-        <button class="dropdownButton">More</button>
+        <button href="#menu" class="dropdownButton">More</button>
         <div class="dropdown-items">
-          <a id="nav tertiary">About</a>
-          <a id="nav tertiary">Credits</a>
+          <a class="nav tertiary">About</a>
+          <a class="nav tertiary">Credits</a>
         </div>
       </div>
     <!--  <a href="javascript:void(0);" class="drop" onclick="dropDown()"></a> -->
@@ -55,7 +55,7 @@
       </div>
     </section>
     <main class="grid">
-      <div class="grid one">
+      <div class="grid-item one">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -63,7 +63,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid two">
+      <div class="grid-item two">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -71,7 +71,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid three">
+      <div class="grid-item three">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -79,7 +79,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid four">
+      <div class="grid-item four">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -87,7 +87,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid five">
+      <div class="grid-item five">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -95,7 +95,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid six">
+      <div class="grid-item six">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -103,7 +103,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid seven">
+      <div class="grid-item seven">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -111,7 +111,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid eight">
+      <div class="grid-item eight">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -119,7 +119,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid nine">
+      <div class="grid-item nine">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -127,7 +127,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid ten">
+      <div class="grid-item ten">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -135,7 +135,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid eleven">
+      <div class="grid-item eleven">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
@@ -143,7 +143,7 @@
           <button data-modal="" class="card-enlarge">View</button>
         </div>
       </div>
-      <div class="grid twelve">
+      <div class="grid-item twelve">
         <div class="thumbnail"></div>
         <div class="card-contents">
           <h4>Title</h4>
