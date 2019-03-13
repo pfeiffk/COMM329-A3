@@ -1,48 +1,196 @@
+:root {
+  --navBG: #0D160F;
+  --bgColor: #BDBFBD/*#B7B9AB #CCCFCA*/;
+  --navTXT: #BDBFBD/*#A7AAA7*/;
+  --navHL: #E9E9E9;
+  --cardBG: #E7E9E6 /*#ECEDEB #B8B4A6*/;
+  --slideshow: #39403A;
+  --fontHand: 'Amatic SC', cursive, sans-serif;
+  --fontType: 'Cutive Mono', monospace;
+}
+
   nav {
+  font-family: var(--fontType);
   display: flex;
   padding: 1em;
+  font-size: 14pt;
   text-align: center;
   flex-direction: row;
+  color: var(--navTXT);
   justify-content: space-around;
-  background-color: black;
-  font-size: 14pt;
-  color: white;
+  background-color: var(--navBG);
   } .primary {
   flex-grow: .3;
   font-size: 18pt;
+  } .dropdown {
+    position: relative;
+    display: inline-block;
+  } .dropdown-items {
+    display: none;
+    position: absolute;
+    background-color: var(--navBG);
+    padding: 12px 16px;
+    z-index: 1;
+  } .dropdown:hover .dropdown-items {
+    padding-top: 25px;
+    padding-right: 89%;
+    padding-left: 45%;
+    display: block;
+    text-align: left;
+  } .trigram {
+    display: none;
+    text-decoration: none;
+    font-size: 2rem;
   }
 
-  nav a:link, nav a:visited {
-  color: lightpink;
-  text-decoration: none;
-  } nav a:hover, nav a:active {
-  color: #F0F0F0;
-  text-decoration: underline;
-  } nav a.active {
-  color: #F0F0F0;
+  nav a:hover, nav button:hover {
+    cursor: pointer;
+    color:  var(--navHL);
+    text-decoration: underline;
   }
 
 body {
+ background-color: var(--bgColor);
+}
 
+h4 {
+  font-family: var(--fontHand);
+  font-size: 20pt;
+}
+
+p {
+  margin-top: 6px;
+  line-height: 1.4;
+  font-family: var(--fontType);
 }
 
   button {
   border: none;
-  background-color: lightyellow;
+  background-color: var(--navHL);
   } .dropdownButton {
-  color: white;
-  background-color: black;
+  color: var(--navTXT);
+  background-color: var(--navBG);
   }
+
+.slideshow {
+  background-color: var(--slideshow);
+}
+
+.slideshow-wrapper {
+  position: relative; /*-- this allows children to be position absolutely --*/
+  margin: auto; /*-- simple centering method--*/
+  max-width: 1440px; /*-- contrains slideshow on largest screens --*/
+}
+
+.slideshow-wrapper img {
+  width: 100%; /*-- makes slideshow responsive in size --*/
+}
+
+.prev, .next {
+  cursor: pointer; /*-- changes hover cursor to the hand --*/
+  position: absolute; /*-- positions arrows absolutely--*/
+  top: 50%; /*-- positions arrows half the height of parent from top --*/
+  width: auto; /*-- matches width of parent --*/
+  padding: 16px; /*-- adds a little bit of space--*/
+  margin-top: -22px; /*-- adjusts position by height of arrows --*/
+  color: white; /*-- sets color for contrast --*/
+  font-weight: bold; /*-- selects heavier font --*/
+  font-size: 18px; /*-- sets arrow font size --*/
+  transition: 0.6s ease; /*-- sets transition speed for arrow hover--*/
+  border-radius: 0 3px 3px 0; /*-- slightly rounds inside borders --*/
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; /*-- prevents users from selecting buttons --*/
+}
+
+.next {
+  right: 0; /*-- positions next arrow hard right --*/
+  border-radius: 3px 0 0 3px; /*-- rounds the outside borders --*/
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); /*-- gives a background for contrast on hover --*/
+}
+
+.slideshow-contents {
+  text-align: center; /*-- aligns selectors center --*/
+}
+
+.caption {
+  font-family: var(--fontType);
+  background: rgba(0,0,0,0.4); /*-- transparent black background --*/
+  color: #f2f2f2; /*-- sets color to almost white --*/
+  font-size: 22px; /*-- sets font size --*/
+  padding: 8px 12px; /*-- sets caption padding --*/
+  position: absolute; /*-- positions caption text absolutely--*/
+  bottom: 8px; /*-- sets position 8px from bottom --*/
+  width: 100%; /*-- sets width equal to container width --*/
+  text-align: center; /*-- aligns text center --*/
+}
+
+.numberof {
+  color: #f2f2f2; /*-- sets color to almost white --*/
+  font-size: 12px; /*-- sets font size --*/
+  padding: 8px 12px; /*-- sets numberof padding --*/
+  position: absolute; /*-- positions numberof text absolutely--*/
+  top: 0; /*-- sets position hard to the top--*/
+}
+
+.selector {
+  cursor:pointer;
+  height: auto;
+  width: 24.4%;
+  margin: 0 0px;
+  background-color: #bbb;
+  display: inline-block;
+  transition: all 250ms ease-in-out;
+  opacity: .5;
+  filter: grayscale(70%);
+  background-color: var(--slideshow);
+}
+
+.selector img {
+  width: 100% !important;
+}
+
+.active, .selector:hover {
+  opacity: 1;
+  filter:grayscale(0%);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 767px) {
+  .slideshow {display: none;}
+}
 
 .grid {
   margin: 1em;
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 1.5em;
   grid-template-columns: 1fr;
 } .grid-item {
   border-radius: 4px;
   padding-bottom: .5em;
-  background-color: beige;
+  background-color: var(--cardBG);
+} .grid-item:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 3px 3px 24px rgba(0,0,0,0.6);
 }
 
 .thumbnail {
@@ -50,6 +198,10 @@ body {
   padding-bottom: 60%;
   background-size: cover;
   background-position: center center;
+}
+
+.card-contents {
+  margin: .8em;
 }
 
 .one .thumbnail { background-image: url(https://picsum.photos/600/400?image=1084);}
@@ -65,6 +217,107 @@ body {
 .eleven .thumbnail { background-image: url(https://picsum.photos/600/400?image=718);}
 .twelve .thumbnail { background-image: url(https://picsum.photos/600/400?image=577);}
 
+.modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1100;
+  overflow: auto;
+  position: fixed;
+  background-color: rgba(10, 10, 10, .85);
+}
+
+.modal-content {
+   background-color: var(--bgColor);
+   color: var(--navBG);
+   margin: 1rem auto;
+   padding: 1em;
+   width: 96%;
+   border-radius: 4px;
+   animation: fadein .4s ease-in-out;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: auto;
+}
+
+.text h4 {
+  font-size: 30pt;
+}
+
+.text p{
+  font-size: 16pt;
+}
+
+.close {
+   color: var(--navBG);
+   font-size: 2.5em;
+   position: absolute; /*-- always at the top right of the modal --*/
+   top: 15px;
+   right: 3%;
+   transition: all .1s ease-in;
+}
+.close:hover,
+.close:focus {
+   color: var(--navHL);
+   text-decoration: none;
+   cursor: pointer;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fadein {
+  from{transform:scale(.1);}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.text {
+  align-self: center;
+}
+
+footer {
+  background-color: var(--navBG);
+  padding: .25rem;
+  color: var(--navTXT);
+  text-align: center;
+}
+footer a {
+  color: var(--navTXT);
+}
+footer a:hover {
+  color: var(--navHL);
+}
+@media screen and (max-width: 767px) {
+  .dropdown {display: none;}
+  .top a, .top span {display: none;}
+  .top a.trigram {display:inherit; position:absolute; top: -1.7%; right:4%; font-size:2em; padding: .25em; color: var(--navTXT);}
+  .top a.trigram:hover {text-decoration: none; color: var(--navHL);}
+}
+@media screen and (max-width: 767px) {
+  .dropdown {display: none;}
+  .top .responsive {align-items: center;}
+  .top .responsive a, .top .responsive span {display:inherit;}
+  .top .responsive a:first-child {margin-top:1em;}
+  .top .responsive a:not(:last-child) {display:inherit; padding-top:1em;}
+  .top .responsive a.more {margin-bottom: 1em;}
+  .top .responsive a.trigram {visibility:hidden; transition:none;}
+  .top .responsive a.trigram:after {content:'\000D7'; visibility:visible; text-indent: -.5em;}
+}
+
+@media screen and (min-width: 768px) {
+  .top {display: flex; flex-direction: row; justify-content: space-around;}
+}
 @media screen and (min-width: 550px) {
   .grid {grid-template-columns: repeat(2, 1fr);}
 }
@@ -76,4 +329,10 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .grid {grid-template-columns: repeat(4, 1fr);}
+}
+@media screen and (min-width: 1280px) {
+  .modal-body {grid-template-columns: 5fr 3fr;}
+}
+@media only screen and (max-width: 767px) {
+  .slideshow {display: none;}
 }

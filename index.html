@@ -6,152 +6,304 @@
     <meta https-http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, intial-scale=1">
     <title>Image Gallery</title>
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Lato:300,900" rel="stylesheet"><!-- to load google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Cutive+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/mini_reset.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <script type="text/javascript" src="A3.js"></script>
+   <!-- <script src="A3.js" type="text/javascript"></script> -->
     <nav id="main-nav" class="top">
-      <a href="#menu" class="nav-item secondary"><span class="label">Home</span></a>
-      <a href="#menu" class="nav-item secondary"><span class="label">Upload</span></a>
-      <a href="#menu" class="nav-item primary"><span class="label">Image Gallery</span></a>
-      <a href="#menu" class="nav-item secondary"><span class="label">Info</span></a>
+      <a class="nav-item secondary"><span class="label">Home</span></a>
+      <a class="nav-item secondary"><span class="label">Upload</span></a>
+      <a class="nav-item primary"><span class="label">Image Gallery</span></a>
+      <a class="nav-item secondary"><span class="label">Info</span></a>
       <div class="dropdown">
-        <button href="#menu" class="dropdownButton">More</button>
+        <button class="dropdownButton">More</button>
         <div class="dropdown-items">
           <a class="nav tertiary">About</a>
           <a class="nav tertiary">Credits</a>
         </div>
       </div>
-    <!--  <a href="javascript:void(0);" class="drop" onclick="dropDown()"></a> -->
+    <a href="javascript:void(0);" class="nav-item trigram" onclick="navToggle()">&#9776;</a>
     </nav>
     <section class="slideshow">
       <div class="slideshow-wrapper">
         <div class="slide fade">
-          <img src="" alt=""/>
-          <div class="caption"></div>
+          <img src="https://picsum.photos/1400/450?image=1045" alt="Mountains"/>
+          <div class="caption">Don't fall down.</div>
         </div>
         <div class="slide fade">
-          <img src="" alt=""/>
-          <div class="caption"></div>
+          <img src="https://picsum.photos/1400/450?image=984" alt="More Mountains"/>
+          <div class="caption">Not much to see here.</div>
         </div>
         <div class="slide fade">
-          <img src="" alt=""/>
-          <div class="caption"></div>
+          <img src="https://picsum.photos/1400/450?image=933" alt="Grassland"/>
+          <div class="caption">Grass, it's green.</div>
         </div>
         <div class="slide fade">
-          <img src="" alt=""/>
-          <div class="caption"></div>
+          <img src="https://picsum.photos/1400/450?image=938" alt="Big Waterfall"/>
+          <div class="caption">Waterfalls, oh boy.</div>
         </div>
-        <a class="prev" onclick="slides(-1)"></a>
-        <a class="next" onclick="slides(1)"></a>
+        <a class="prev" onclick="plus(-1)">&#10094;</a>
+        <a class="next" onclick="plus(1)">&#10095;</a>
       </div>
       <div class="slideshow-contents">
-        <span class="selector" onclick="current(1)"><img src="" alt=""></span>
-        <span class="selector" onclick="current(2)"><img src="" alt=""></span>
-        <span class="selector" onclick="current(3)"><img src="" alt=""></span>
-        <span class="selector" onclick="current(4)"><img src="" alt=""></span>
+        <span class="selector" onclick="current(1)"><img src="https://picsum.photos/1400/450?image=1045" alt="Mountains"></span>
+        <span class="selector" onclick="current(2)"><img src="https://picsum.photos/1400/450?image=984" alt="More Mountains"></span>
+        <span class="selector" onclick="current(3)"><img src="https://picsum.photos/1400/450?image=933" alt="Grassland"></span>
+        <span class="selector" onclick="current(4)"><img src="https://picsum.photos/1400/450?image=938" alt="Big Waterfall"></span>
       </div>
     </section>
     <main class="grid">
-      <div class="grid-item one">
+      <a data-modal="#01" class="grid-item more one">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Walrus.</h4>
+          <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. </p>
+        </div>
+      </a> <!--end .grid-item -->
+      <div id="01"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=1084" alt="Walrus!" />
+             <div class="text">
+               <h4>Walruses.</h4>
+               <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+                  Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item two">
+      <a data-modal="#02" class="grid-item more two">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Lion.</h4>
+          <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. </p>
+        </div>
+      </a>
+      <div id="02"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=1074" alt="Walrus!" />
+             <div class="text">
+               <h4>Lion.</h4>
+               <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth
+                  salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item three">
+      <a data-modal="#03" class="grid-item more three">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Sheep.</h4>
+          <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+        </div>
+      </a>
+      <div id="03"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=937" alt="Walrus!" />
+             <div class="text">
+               <h4>Sheep.</h4>
+               <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.
+                  Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item four">
+      <a data-modal="#04" class="grid-item more four">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Eagle.</h4>
+          <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama green bean celtuce collard greens avocado quandong fennel gumbo black-eyed pea.</p>
+        </div>
+      </a>
+      <div id="04"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=1024" alt="Walrus!" />
+             <div class="text">
+               <h4>Eagle.</h4>
+               <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama green bean celtuce collard greens avocado quandong fennel gumbo black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring onion azuki bean gourd. Gumbo kakadu plum komatsuna black-eyed pea green bean zucchini gourd winter purslane silver beet rock melon radish asparagus spinach.</p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item five">
+      <a data-modal="#05" class="grid-item more five">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Bear + Smaller Bears.</h4>
+          <p>Beetroot water spinach okra water chestnut ricebean pea catsear courgette summer purslane. Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean.</p>
+        </div>
+      </a>
+      <div id="05"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=1020" alt="Walrus!" />
+             <div class="text">
+               <h4>Bears. Beets. Battle Star Galactica.</h4>
+               <p>Beetroot water spinach okra water chestnut ricebean pea catsear courgette summer purslane. Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean. Dandelion zucchini chickpea dandelion sorrel courgette turnip greens tigernut soybean radish artichoke wattle seed endive groundnut broccoli arugula.
+                  Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. Catsear cauliflower garbanzo chicory garlic bell pepper napa cabbage tomato arugula melon sierra leone bologi rutabaga tigernut. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item six">
+      <a data-modal="#06" class="grid-item more six">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Dog.</h4>
+          <p>Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic.</p>
+        </div>
+      </a>
+      <div id="06"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=837" alt="Walrus!" />
+             <div class="text">
+               <h4>Dog.</h4>
+               <p>Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic. Jícama garlic courgette coriander radicchio plantain scallion cauliflower fava bean desert raisin spring onion chicory bunya nuts. Sea lettuce water spinach gram fava bean leek dandelion silver beet eggplant bush tomato. Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean
+                  collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item seven">
+      <a data-modal="#07" class="grid-item more seven">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Grassland.</h4>
+          <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale.</p>
+        </div>
+      </a>
+      <div id="07"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=11" alt="Walrus!" />
+             <div class="text">
+               <h4>Grassland.</h4>
+               <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth
+                  salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item eight">
+      <a data-modal="#08" class="grid-item more eight">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Big Bear.</h4>
+          <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+        </div>
+      </a>
+      <div id="08"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=433" alt="Walrus!" />
+             <div class="text">
+               <h4>Big Bears. Big Beets. Big Battlestar Galactica</h4>
+               <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.
+                  Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item nine">
+      <a data-modal="#09" class="grid-item more nine">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Forest.</h4>
+          <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama green bean celtuce collard greens avocado quandong fennel gumbo black-eyed pea.</p>
+        </div>
+      </a>
+      <div id="09"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=560" alt="Walrus!" />
+             <div class="text">
+               <h4>Forest.</h4>
+               <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jícama green bean celtuce collard greens avocado quandong fennel gumbo black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring onion azuki bean gourd. Gumbo kakadu plum komatsuna black-eyed
+                  pea green bean zucchini gourd winter purslane silver beet rock melon radish asparagus spinach.</p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item ten">
+      <a data-modal="#10" class="grid-item more ten">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Monkey.</h4>
+          <p>Beetroot water spinach okra water chestnut ricebean pea catsear courgette summer purslane. Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean.</p>
+        </div>
+      </a>
+      <div id="10" class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=783" alt="Walrus!" />
+             <div class="text">
+               <h4>Monkey.</h4>
+               <p>Beetroot water spinach okra water chestnut ricebean pea catsear courgette summer purslane. Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean. Dandelion zucchini burdock yarrow chickpea dandelion sorrel courgette turnip greens tigernut soybean radish artichoke wattle seed endive groundnut broccoli arugula. Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce
+                  brussels sprout cabbage.</p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item eleven">
+      <a data-modal="#11" class="grid-item more eleven">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Wolf.</h4>
+          <p>Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut.</p>
+        </div>
+      </a>
+      <div id="11"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=718" alt="Walrus!" />
+             <div class="text">
+               <h4>Wolf.</h4>
+               <p>Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut. Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic. Jícama garlic courgette coriander radicchio plantain scallion cauliflower fava bean desert raisin spring onion chicory bunya nuts. Sea lettuce water spinach gram fava bean
+                  leek dandelion silver beet eggplant bush tomato. </p>
+             </div>
+           </div>
         </div>
       </div>
-      <div class="grid-item twelve">
+      <a data-modal="#12" class="grid-item more twelve">
         <div class="thumbnail"></div>
         <div class="card-contents">
-          <h4>Title</h4>
-          <p>Info</p>
-          <button data-modal="" class="card-enlarge">View</button>
+          <h4>Moose.</h4>
+          <p>Dandelion zucchini burdock yarrow chickpea dandelion sorrel courgette turnip greens tigernut soybean radish artichoke wattle seed endive groundnut broccoli arugula.</p>
+        </div>
+      </a>
+      <div id="12"class="modal">
+        <div class="modal-content">
+           <span class="close">&times;</span>
+           <div class="modal-body">
+             <img src="https://picsum.photos/800/550/?image=577" alt="Walrus!" />
+             <div class="text">
+               <h4>Moose.</h4>
+               <p>Dandelion zucchini burdock yarrow chickpea dandelion sorrel courgette turnip greens tigernut soybean radish artichoke wattle seed endive groundnut broccoli arugula. Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut. Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic. Jícama
+                  garlic courgette coriander radicchio plantain scallion cauliflower fava bean desert raisin spring onion chicory bunya nuts.</p>
+             </div>
+           </div>
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>&copy; 2019 pfeiffk &nbsp;|&nbsp; All photos from <a href="https://picsum.photos/">Lorem Picsum</a></footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="page.js"></script>
   </body>
 </html>
