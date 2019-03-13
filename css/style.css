@@ -301,18 +301,36 @@ footer a:hover {
 @media screen and (max-width: 767px) {
   .dropdown {display: none;}
   .top a, .top span {display: none;}
-  .top a.trigram {display:inherit; position:absolute; top: -1.7%; right:4%; font-size:2em; padding: .25em; color: var(--navTXT);}
-  .top a.trigram:hover {text-decoration: none; color: var(--navHL);}
+  .top a.trigram {
+    display:inherit;
+    position:absolute;
+    top: -1.7%; right:4%;
+    font-size:2em;
+    padding: .25em;
+    color: var(--navTXT);
+  } .top a.trigram:hover {
+    text-decoration: none;
+    color: var(--navHL);
+  }
 }
 @media screen and (max-width: 767px) {
   .dropdown {display: none;}
   .top .responsive {align-items: center;}
   .top .responsive a, .top .responsive span {display:inherit;}
   .top .responsive a:first-child {margin-top:1em;}
-  .top .responsive a:not(:last-child) {display:inherit; padding-top:1em;}
+  .top .responsive a:not(:last-child) {
+    display:inherit;
+    padding-top:1em;
+  }
   .top .responsive a.more {margin-bottom: 1em;}
-  .top .responsive a.trigram {visibility:hidden; transition:none;}
-  .top .responsive a.trigram:after {content:'\000D7'; visibility:visible; text-indent: -.5em;}
+  .top .responsive a.trigram {
+    visibility: hidden;
+    transition: none;
+  } .top .responsive a.trigram:after {
+    content:'\000D7';
+    visibility: visible;
+    text-indent: -.5em;
+  }
 }
 
 @media screen and (min-width: 768px) {
