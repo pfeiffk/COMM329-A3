@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Lato:300,900" rel="stylesheet"><!-- to load google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Cutive+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/mini_reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,15 +17,15 @@
   <body>
    <!-- <script src="A3.js" type="text/javascript"></script> -->
     <nav id="main-nav" class="top">
-      <a class="nav-item secondary"><span class="label">Home</span></a>
-      <a class="nav-item secondary"><span class="label">Upload</span></a>
-      <a class="nav-item primary"><span class="label">Image Gallery</span></a>
-      <a class="nav-item secondary"><span class="label">Info</span></a>
+      <a class="nav-item secondary responsive"><span class="label1">Home</span></a>
+      <a class="nav-item secondary responsive"><span class="label2">Upload</span></a>
+      <a class="nav-item primary responsive"><span class="label3">Image Gallery</span></a>
+      <a class="nav-item secondary responsive"><span class="label4">Info</span></a>
       <div class="dropdown">
-        <button class="dropdownButton">More</button>
+        <button class="dropdownButton">More</button><i class="fas fa-caret-down"></i>
         <div class="dropdown-items">
-          <a class="nav tertiary">About</a>
-          <a class="nav tertiary">Credits</a>
+          <a href="https://picsum.photos/" class="nav tertiary responsive">About</a>
+          <a href="https://picsum.photos/images" class="nav tertiary responsive">Credits</a>
         </div>
       </div>
     <a href="javascript:void(0);" class="nav-item trigram" onclick="navToggle()">&#9776;</a>
