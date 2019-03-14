@@ -316,6 +316,7 @@ p {
 
 footer {
   background-color: var(--navBG);
+  font-family: var(--fontType);
   padding: .25rem;
   color: var(--navTXT);
   text-align: center;
